@@ -92,7 +92,7 @@
 
 # 5. Model file
 1. The network structure of *DeformableFishNet* detection model proposed by us can be found in **ultralytics/models/v8/DeformableFishNet.yaml** .
-2. The *efficient global coordinate attention module (EGCA)* module we proposed is in **ultralytics/nn/extra_modules/attention.py ** line 1007.
+2. The *efficient global coordinate attention module (EGCA)* module we proposed is in **ultralytics/nn/extra_modules/attention.py** line 1007.
 3. The *deformable convolution network based on EGCA (EDCN/EC2f)* module we proposed is in **ultralytics/nn/extra_modules/block.py** line 1497 .
 4. The network structure of  *EC2f-based feature pyramid network (EDBFPN)* module we proposed is in **ultralytics/models/v8/EDBFPN.yaml** .
 5. The *efficient multi-scale decoupling head (EMSD Head)* module we proposed is in **ultralytics/nn/extra_modules/head.py**  line 14.
