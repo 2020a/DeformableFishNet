@@ -1,7 +1,6 @@
 # DeformableFishNet
  
 # 1. Install
-
     pip install -r requirements.txt
     python setup.py develop
     pip install timm thop efficientnet_pytorch einops -i https://pypi.tuna.tsinghua.edu.cn/simple
@@ -10,6 +9,8 @@
     mim install "mmcv>=2.0.0"
 
 # 2. Train
+You can use */train.py* to train the model. The following is the parameter configuration in */train.py*.
+
     parser.add_argument('--yaml', type=str, default='ultralytics/models/v8/DeformableFishNet.yaml', help='model.yaml path')
     parser.add_argument('--weight', type=str, default='', help='pretrained model path')
     parser.add_argument('--cfg', type=str, default='hyp.yaml', help='hyperparameters path')
@@ -49,6 +50,8 @@
     parser.add_argument('--dropout', type=float, default=0.0, help='use dropout regularization (classify train only)')
 
 # 3. Val
+You can use */val.py* to verify the model. The following is the parameter configuration in */val.py*.
+
     parser.add_argument('--weight', type=str, default='yolov8n.pt', help='training model path')
     parser.add_argument('--data', type=str, default='ultralytics/datasets/coco128.yaml', help='data yaml path')
     parser.add_argument('--imgsz', type=int, default=640, help='size of input images as integer')
@@ -67,6 +70,8 @@
     parser.add_argument('--plots', action="store_true", default=True, help='ave plots during train/val')
 
 # 4. Detect
+You can use */detect.py* for detection. The following is the parameter configuration in */detect.py*.
+
     parser.add_argument('--weight', type=str, default='yolov8n.pt', help='training model path')
     parser.add_argument('--source', type=str, default='ultralytics/assets', help='source directory for images or videos')
     parser.add_argument('--conf', type=float, default=0.25, help='object confidence threshold for detection')
@@ -91,11 +96,17 @@
     parser.add_argument('--tracker', type=str, default='bytetrack.yaml', choices=['botsort.yaml', 'bytetrack.yaml'], help='tracker type, [botsort.yaml, bytetrack.yaml]')
 
 # 5. Model file
-1. The network structure of *DeformableFishNet* detection model proposed by us can be found in **ultralytics/models/v8/DeformableFishNet.yaml** .
-2. The *efficient global coordinate attention module (EGCA)* module we proposed is in **ultralytics/nn/extra_modules/attention.py** line 1007.
-3. The *deformable convolution network based on EGCA (EDCN/EC2f)* module we proposed is in **ultralytics/nn/extra_modules/block.py** line 1497 .
-4. The network structure of  *EC2f-based feature pyramid network (EDBFPN)* module we proposed is in **ultralytics/models/v8/EDBFPN.yaml** .
-5. The *efficient multi-scale decoupling head (EMSD Head)* module we proposed is in **ultralytics/nn/extra_modules/head.py**  line 14.
+1. The network structure of **DeformableFishNet** detection model proposed by us can be found in *ultralytics/models/v8/DeformableFishNet.yaml* .
+2. The **efficient global coordinate attention module (EGCA)** module we proposed is in *ultralytics/nn/extra_modules/attention.py* line 1007.
+3. The **deformable convolution network based on EGCA (EDCN/EC2f)** module we proposed is in *ultralytics/nn/extra_modules/block.py* line 1497 .
+4. The network structure of **EC2f-based feature pyramid network (EDBFPN)** module we proposed is in *ultralytics/models/v8/EDBFPN.yaml* .
+5. The **efficient multi-scale decoupling head (EMSD Head)** module we proposed is in *ultralytics/nn/extra_modules/head.py*  line 14.
 
+# 6. Dataset
+The **freshwater fish dataset** is under *Freshwater fish/* directory. There are 4691 pictures in our **freshwater fish dataset**, all of which were taken by underwater RGB camera in natural freshwater environment.The fish in the picture belong to two species, koi fish and tilapia.
+
+Tilapia and koi fish are two different fish, and there are some obvious differences in their body surface characteristics. The body surface of tilapia is covered with smooth and hard scales, which are small and closely arranged. Their scales don't reflect light as koi fish does. The body of tilapia is usually oval or slightly flat. They are relatively small, especially compared with adult koi fish. Tilapia has many kinds of fins, including dorsal fin, anal fin, caudal fin and pectoral fin. Their fins are relatively short and strong, and they usually don't have a wide and unique shape like koi fish. Koi fish is famous for its colorful colors and unique patterns, while the color of tilapia is relatively simple, usually gray, silver or brown. Koi fish is bigger and rounder than tilapia.
+
+Using **DeformableFishNet** to train freshwater fish dataset needs to store *Freshwater fish/images/* and *Freshwater fish/labels/* directories under *dataset/* directory.
  
 
