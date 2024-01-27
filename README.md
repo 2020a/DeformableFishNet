@@ -3,7 +3,7 @@
 # 1. Install
     pip install -r requirements.txt
     python setup.py develop
-    pip install timm thop efficientnet_pytorch einops -i https://pypi.tuna.tsinghua.edu.cn/simple
+    pip install timm thop efficientnet_pytorch einops
     pip install -U openmim
     mim install mmengine
     mim install "mmcv>=2.0.0"
