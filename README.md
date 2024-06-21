@@ -102,11 +102,6 @@ You can use */detect.py* for detection. The following is the parameter configura
 4. The network structure of **EC2f-based feature pyramid network (EDBFPN)** module we proposed is in *ultralytics/models/v8/EDBFPN.yaml* .
 5. The **efficient multi-scale decoupling head (EMSD Head)** module we proposed is in *ultralytics/nn/extra_modules/head.py*  line 14.
 
-# 6. Dataset
-The **freshwater fish dataset** is under *Freshwater fish/* directory. There are 4691 pictures in our **freshwater fish dataset**, all of which were taken by underwater RGB camera in natural freshwater environment.The fish in the picture belong to two species, koi fish and tilapia.
 
-Tilapia and koi fish are two different fish, and there are some obvious differences in their body surface characteristics. The body surface of tilapia is covered with smooth and hard scales, which are small and closely arranged. Their scales don't reflect light as koi fish does. The body of tilapia is usually oval or slightly flat. They are relatively small, especially compared with adult koi fish. Tilapia has many kinds of fins, including dorsal fin, anal fin, caudal fin and pectoral fin. Their fins are relatively short and strong, and they usually don't have a wide and unique shape like koi fish. Koi fish is famous for its colorful colors and unique patterns, while the color of tilapia is relatively simple, usually gray, silver or brown. Koi fish is bigger and rounder than tilapia.
-
-Using **DeformableFishNet** to train freshwater fish dataset needs to store *Freshwater fish/images/* and *Freshwater fish/labels/* directories under *dataset/* directory.
  
 
